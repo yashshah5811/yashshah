@@ -2,26 +2,300 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Website</title>
+    <meta name="viewport" content="width=1024">
+    <meta name="description" content="Yash Shah's portfolio - IoT & AWS Engineer, B.Tech CSE with IoT specialization from G H Patel College of Engineering & Technology">
+    <meta name="keywords" content="Yash Shah, IoT Engineer, AWS Engineer, CVM University, Portfolio, Developer, Projects">
+    <meta name="author" content="Yash Shah">
+
+    <title>Yash Shah | IoT & AWS Engineer Portfolio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background: #121212;
+            color: #ffffff;
+            overflow-x: hidden;
         }
-        h1 {
-            color: #333;
+        header {
+            background: linear-gradient(to right, #000000, #FFD700);
+            color: white;
+            padding: 5rem;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        header h1 {
+            font-size: 6rem;
+            margin: 0;
+            color: #FFD700;
+        }
+        header p {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #1c1c1c;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            border-bottom: 2px solid #FFD700;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+            margin: 0;
+            list-style: none;
+        }
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #e0e0e0;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #FFD700;
+        }
+        section {
+            padding: 4rem 2rem;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        section:nth-child(odd) {
+            background: #1c1c1c;
+        }
+        section:nth-child(even) {
+            background: #2c2c2c;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #FFD700;
         }
         p {
-            color: #666;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        a {
+            font-size: 1.2rem;
+            color: #FFD700;
+            text-decoration: none;
+        }
+        .highlight {
+            color: #121212;
+            background: #FFD700;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .skills-icons img {
+            height: 100px;
+            margin: 20px;
+            vertical-align: middle;
+        }
+        .button {
+            font-family: 'Poppins', sans-serif;
+            margin-top: 2rem;
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            color: #121212;
+            background: #FFD700;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .button:hover {
+            background: #000000;
+            color: #FFD700;
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+        }
+        
+        .project-card {
+            background: #333333; 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.1); 
+            text-align: left; 
+            width: 100%;
+            margin-bottom: 20px;
+            border-left: 4px solid #FFD700;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(255, 215, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        footer {
+            background: #1c1c1c;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 2px solid #FFD700;
+        }
+        footer p {
+            font-size: 1rem;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            header p {
+                font-size: 1.2rem;
+            }
+            nav ul li {
+                margin: 0 0.8rem;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to My Website!</h1>
-    <p>This is my GitHub Pages site.</p>
+    <header>
+        <h1>Yash Shah</h1>
+        <p>IoT & AWS Engineer | B.Tech in Computer Science & Engineering with IoT Specialization</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am <span class="highlight">Yash Shah</span>, a B.Tech graduate in Computer Science Engineering specializing in <span class="highlight">IoT and Robotics</span> from <span class="highlight">G H Patel College of Engineering & Technology (CVM University)</span>.</p>
+            <p>My experience includes internships at <span class="highlight">Eleics Design</span> and <span class="highlight">IntelliKonnect</span>, where I worked on projects like <span class="highlight">IoT-based flowmeter and energymeter monitoring using AWS IoT Core</span> and <span class="highlight">self-balancing robots</span>.</p>
+            <p>I am passionate about creating innovative <span class="highlight">IoT solutions</span> that solve real-world problems.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <div class="skills-icons">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="Embedded C" title="Embedded C">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" title="C++">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1024px-Amazon_Web_Services_Logo.svg.png" alt="AWS" title="AWS">
+            </div>
+            <p>Proficient in <span class="highlight">IoT system design</span>, <span class="highlight">embedded systems</span>, and <span class="highlight">cloud integration</span> with AWS services.</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            
+            <div class="project-card">
+                <h3>IoT Based Weather Station</h3>
+                <p>Developed a weather monitoring system that collects and analyzes environmental data including temperature, humidity, and atmospheric pressure.</p>
+                <p><strong>Technologies:</strong> Embedded C, IoT sensors, AWS IoT Core</p>
+            </div>
+            
+            <div class="project-card">
+                <h3>RFID & Face Recognized Door Lock/Unlock System</h3>
+                <p>Created a secure access control system combining RFID technology with facial recognition for enhanced security.</p>
+                <p><strong>Technologies:</strong> Python, OpenCV, RFID modules</p>
+            </div>
+            
+            <div class="project-card">
+                <h3>Self Balancing Robot</h3>
+                <p>Designed and implemented a two-wheeled autonomous robot that maintains balance using PID control algorithms.</p>
+                <p><strong>Technologies:</strong> Arduino, MPU6050 sensor, PID control</p>
+            </div>
+            
+            <div class="project-card">
+                <h3>Monitoring IIoT Using AWS</h3>
+                <p>Developed an Industrial IoT monitoring solution for flowmeters and energymeters with AWS IoT Core integration for data processing and visualization.</p>
+                <p><strong>Technologies:</strong> AWS IoT Core, MQTT, Node-RED</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            
+            <div class="project-card">
+                <h3>Intern at Eleics Design</h3>
+                <p>Worked on IoT-based monitoring systems and contributed to hardware-software integration projects.</p>
+                <p><strong>Key Contributions:</strong> Developed sensor data acquisition modules, implemented AWS IoT integration</p>
+            </div>
+            
+            <div class="project-card">
+                <h3>Intern at IntelliKonnect</h3>
+                <p>Participated in robotics projects including the development of self-balancing systems.</p>
+                <p><strong>Key Contributions:</strong> Implemented PID control algorithms, designed sensor fusion systems</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Let's connect and discuss potential opportunities!</p>
+
+            <div style="display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap; margin-top: 2rem;">
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/shah-yash-piyush-599639255/" target="_blank" title="LinkedIn" style="display: flex; align-items: center;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 40px; height: 40px; margin-right: 10px;">
+                    <span>LinkedIn</span>
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:ypshah2003@gmail.com" title="Email" style="display: flex; align-items: center;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" style="width: 40px; height: 40px; margin-right: 10px;">
+                    <span>Email</span>
+                </a>
+            </div>
+            
+            <a href="#contact" class="button">Get In Touch</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Yash Shah's Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
