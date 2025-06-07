@@ -1,301 +1,431 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=1024">
-    <meta name="description" content="Yash Shah's portfolio - IoT & AWS Engineer, B.Tech CSE with IoT specialization from G H Patel College of Engineering & Technology">
-    <meta name="keywords" content="Yash Shah, IoT Engineer, AWS Engineer, CVM University, Portfolio, Developer, Projects">
-    <meta name="author" content="Yash Shah">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yash Shah | IoT & AWS Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="yash.png" type="image/x-icon">
+  <style>
+    :root {
+      --bg: #0e0e0e;
+      --text: #f5f5f5;
+      --accent: #FFD700;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --nav-bg: rgba(18, 18, 18, 0.9);
+      --toggle-bg: #444;
+      --toggle-active-bg: #FFD700;
+    }
 
-    <title>Yash Shah | IoT & AWS Engineer Portfolio</title>
+    [data-theme='light'] {
+      --bg: #ffffff;
+      --text: #111111;
+      --accent: #FFA500;
+      --card-bg: #f4f4f4;
+      --nav-bg: rgba(255, 255, 255, 0.9);
+      --toggle-bg: #ddd;
+      --toggle-active-bg: #FFA500;
+    }
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #121212;
-            color: #ffffff;
-            overflow-x: hidden;
-        }
-        header {
-            background: linear-gradient(to right, #000000, #FFD700);
-            color: white;
-            padding: 5rem;
-            text-align: center;
-            font-size: 1.2rem;
-        }
-        header h1 {
-            font-size: 6rem;
-            margin: 0;
-            color: #FFD700;
-        }
-        header p {
-            font-size: 1.5rem;
-            margin-top: 1rem;
-        }
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: #1c1c1c;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
-            z-index: 1000;
-            border-bottom: 2px solid #FFD700;
-        }
-        nav ul {
-            display: flex;
-            justify-content: center;
-            padding: 1rem 0;
-            margin: 0;
-            list-style: none;
-        }
-        nav ul li {
-            margin: 0 1.5rem;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: #e0e0e0;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-        }
-        nav ul li a:hover {
-            color: #FFD700;
-        }
-        section {
-            padding: 4rem 2rem;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        section.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        section:nth-child(odd) {
-            background: #1c1c1c;
-        }
-        section:nth-child(even) {
-            background: #2c2c2c;
-        }
-        .container {
-            max-width: 900px;
-            margin: auto;
-        }
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: #FFD700;
-        }
-        p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-        }
-        a {
-            font-size: 1.2rem;
-            color: #FFD700;
-            text-decoration: none;
-        }
-        .highlight {
-            color: #121212;
-            background: #FFD700;
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-        
-        .skills-icons img {
-            height: 100px;
-            margin: 20px;
-            vertical-align: middle;
-        }
-        .button {
-            font-family: 'Poppins', sans-serif;
-            margin-top: 2rem;
-            display: inline-block;
-            padding: 1rem 2rem;
-            font-size: 1rem;
-            color: #121212;
-            background: #FFD700;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        .button:hover {
-            background: #000000;
-            color: #FFD700;
-            transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-        }
-        
-        .project-card {
-            background: #333333; 
-            padding: 20px; 
-            border-radius: 10px; 
-            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.1); 
-            text-align: left; 
-            width: 100%;
-            margin-bottom: 20px;
-            border-left: 4px solid #FFD700;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(255, 215, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        footer {
-            background: #1c1c1c;
-            color: #e0e0e0;
-            text-align: center;
-            padding: 2rem 0;
-            border-top: 2px solid #FFD700;
-        }
-        footer p {
-            font-size: 1rem;
-        }
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5rem;
-            }
-            header p {
-                font-size: 1.2rem;
-            }
-            nav ul li {
-                margin: 0 0.8rem;
-            }
-        }
-    </style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+      transition: all 0.3s ease;
+    }
+
+    header {
+      padding: 6rem 2rem 4rem;
+      text-align: center;
+      background: radial-gradient(circle at top, #1a1a1a, var(--bg));
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: var(--accent);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      color: var(--text);
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: var(--nav-bg);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 2rem;
+      z-index: 999;
+      border-bottom: 1px solid var(--accent);
+      height: 60px;
+    }
+
+    /* === LOGO WRAPPER === */
+    .logo {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      /* Size fixed to nav height */
+      width: 60px;
+      height: 60px;
+      position: relative;
+    }
+
+    /* Outer hexagon shape - black with golden border */
+    .logo .hexagon {
+      position: absolute;
+      width: 60px;
+      height: 52px;
+      background: #000000;
+      clip-path: polygon(
+        25% 0%, 75% 0%, 
+        100% 50%, 75% 100%, 
+        25% 100%, 0% 50%
+      );
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+      z-index: 1;
+    }
+
+    /* Initials container */
+    .logo .initials {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+      user-select: none;
+    }
+
+    /* Y and S letters stylized */
+    .logo .initials span {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 32px;
+      background: linear-gradient(45deg, #fff200, #ffa500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+      text-shadow: 0 0 4px #ffae00cc;
+      display: inline-block;
+      transition: transform 0.3s ease;
+      user-select: none;
+      line-height: 1;
+    }
+
+    .logo .initials span.y {
+      transform-origin: bottom left;
+      transform: skewY(-10deg) translateX(-2px);
+      letter-spacing: -5px;
+    }
+
+    .logo .initials span.s {
+      transform-origin: top right;
+      transform: skewY(10deg) translateX(2px);
+      letter-spacing: -5px;
+    }
+
+    /* Nav links */
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      position: relative;
+      user-select: none;
+    }
+
+    nav ul li a::after {
+      content: '';
+      width: 0%;
+      height: 2px;
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      background: var(--accent);
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    .theme-toggle {
+      cursor: pointer;
+      background: var(--toggle-bg);
+      border: none;
+      color: var(--text);
+      padding: 0.4rem 1rem;
+      border-radius: 30px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      transition: background 0.3s ease;
+      user-select: none;
+    }
+
+    .theme-toggle:hover {
+      background: var(--toggle-active-bg);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: background 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 2rem;
+        background-color: var(--bg);
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    section {
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+    }
+
+    .highlight {
+      background: var(--accent);
+      color: var(--bg);
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .skills-icons img {
+      height: 70px;
+      margin: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .skills-icons img:hover {
+      transform: scale(1.1);
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      padding: 2rem;
+      margin: 2rem 0;
+      border-left: 4px solid var(--accent);
+      border-radius: 12px;
+      text-align: left;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 2rem;
+      background: var(--accent);
+      color: var(--bg);
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      user-select: none;
+    }
+
+    .button:hover {
+      background: var(--bg);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    footer {
+      background: #1a1a1a;
+      color: #999;
+      padding: 2rem;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Yash Shah</h1>
-        <p>IoT & AWS Engineer | B.Tech in Computer Science & Engineering with IoT Specialization</p>
-    </header>
+  <nav>
+    <div class="logo" title="Yash Shah - IoT & AWS Engineer" aria-label="Logo YS">
+      <div class="hexagon"></div>
+      <div class="initials" aria-hidden="true">
+        <span class="y">Y</span><span class="s">S</span>
+      </div>
+    </div>
+    <ul id="nav-links">
+      <li><a href="#about" onclick="smoothScroll(event, '#about')">About</a></li>
+      <li><a href="#skills" onclick="smoothScroll(event, '#skills')">Skills</a></li>
+      <li><a href="#projects" onclick="smoothScroll(event, '#projects')">Projects</a></li>
+      <li><a href="#experience" onclick="smoothScroll(event, '#experience')">Experience</a></li>
+      <li><a href="#contact" onclick="smoothScroll(event, '#contact')">Contact</a></li>
+    </ul>
+    <div class="theme-toggle" onclick="toggleTheme()" role="button" aria-label="Toggle dark/light theme" tabindex="0">
+      <span id="theme-icon">🌙</span>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()" role="button" aria-label="Toggle navigation menu" tabindex="0">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </nav>
 
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+  <header>
+    <h1>Yash Shah</h1>
+    <p>IoT & AWS Engineer | B.Tech in CSE with IoT Specialization | Minor in Robotics 🚀</p>
+  </header>
 
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>I am <span class="highlight">Yash Shah</span>, a B.Tech graduate in Computer Science Engineering specializing in <span class="highlight">IoT and Robotics</span> from <span class="highlight">G H Patel College of Engineering & Technology (CVM University)</span>.</p>
-            <p>My experience includes internships at <span class="highlight">Eleics Design Private Limited</span> and <span class="highlight">IntelliKonnect Solutions Private Limited</span>, where I worked on projects like <span class="highlight">IoT-based flowmeter and energymeter monitoring using AWS IoT Core</span> and <span class="highlight">Machine Learning</span>.</p>
-            <p>I am passionate about creating innovative <span class="highlight">IoT solutions</span> that solve real-world problems.</p>
-        </div>
-    </section>
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>Hey! I'm <span class="highlight">Yash Shah</span>, a tech enthusiast with a knack for building smart, connected devices. I specialize in <span class="highlight">IoT Systems</span>, <span class="highlight">Cloud Integration</span> using AWS, and Embedded Development.</p>
+    </div>
+  </section>
 
-    <section id="skills">
-        <div class="container">
-            <h2>Technical Skills</h2>
-            <div class="skills-icons">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="Embedded C" title="Embedded C">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" title="C++">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1024px-Amazon_Web_Services_Logo.svg.png" alt="AWS" title="AWS">
-            </div>
-            <p>Proficient in <span class="highlight">IoT system design</span>, <span class="highlight">embedded systems</span>, and <span class="highlight">cloud integration</span> with AWS services.</p>
-        </div>
-    </section>
+  <section id="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="skills-icons">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" />
+      </div>
+    </div>
+  </section>
 
-    <section id="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            
-            <div class="project-card">
-                <h3>IoT Based Weather Station</h3>
-                <p>The IoT-Based Weather Station was designed to measure, collect, and display real-time weather data, providing accurate insights on environmental parameters like temperature, humidity, barometric pressure, and rainfall. This project combines hardware, IoT technology, and a user-friendly application to make weather monitoring accessible for everyone.</p>
-                <p><strong>Technologies:</strong> Embedded C, IoT sensors, Blynk</p>
-            </div>
-            
-            <div class="project-card">
-                <h3>RFID & Face Recognized Door Lock/Unlock System</h3>
-                <p>Created a secure access control system combining RFID technology with facial recognition for enhanced security.</p>
-                <p><strong>Technologies:</strong> Python, OpenCV, RFID modules</p>
-            </div>
-            
-            <div class="project-card">
-                <h3>Self Balancing Robot</h3>
-                <p>Designed and implemented a two-wheeled autonomous robot that maintains balance using PID control algorithms.</p>
-                <p><strong>Technologies:</strong> Arduino, MPU6050 sensor, PID control, STM32, ESP32</p>
-            </div>
-            
-            <div class="project-card">
-                <h3>Monitoring IIoT Using AWS</h3>
-                <p>Developed an Industrial IoT monitoring solution for Industrial Assets with AWS IoT Core integration for data processing and visualization.</p>
-                <p><strong>Technologies:</strong> AWS IoT Core, MQTT, ESP32, RS485</p>
-            </div>
-        </div>
-    </section>
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="project-card">
+        <h3>IoT Based Weather Station</h3>
+        <p>Tracks temperature, humidity, pressure & rainfall in real-time with sensor data displayed via Blynk app.</p>
+        <p><strong>Tech:</strong> Embedded C, Blynk, IoT sensors</p>
+      </div>
+      <div class="project-card">
+        <h3>RFID & Face Recognition Door Lock</h3>
+        <p>Smart door lock system combining RFID and OpenCV for dual-layer authentication.</p>
+        <p><strong>Tech:</strong> Python, OpenCV, ESP32</p>
+      </div>
+      <div class="project-card">
+        <h3>Self Balancing Robot</h3>
+        <p>2-wheeled bot that self-balances using MPU6050 and PID control.</p>
+        <p><strong>Tech:</strong> Arduino, STM32, ESP32</p>
+      </div>
+      <div class="project-card">
+        <h3>Monitoring Industrial Assest Using IoT & AWS</h3>
+        <p>Asset monitoring with ESP32 and AWS IoT Core using MQTT protocol and RS485 communication.</p>
+        <p><strong>Tech:</strong> AWS IoT, MQTT, ESP32, RS485</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="experience">
-        <div class="container">
-            <h2>Professional Experience</h2>
-            
-            <div class="project-card">
-                <h3>Intern at Eleics Design Private Limited</h3>
-                <p>Worked on IoT-based monitoring systems and contributed to hardware-software integration projects.</p>
-                <p><strong>Key Contributions:</strong> Developed sensor data acquisition modules, implemented AWS IoT integration</p>
-            </div>
-            
-            <div class="project-card">
-                <h3>Intern at IntelliKonnect Solutions Private Limited</h3>
-                <p>Participated in machine learning projects including the development of RFID & Face Recognition Door Lock System.</p>
-                <p><strong>Key Contributions:</strong> Implemented PID control algorithms, designed sensor fusion systems</p>
-            </div>
-        </div>
-    </section>
+  <section id="experience">
+    <div class="container">
+      <h2>Experience</h2>
+      <div class="project-card">
+        <h3>Intern @ Eleics Design Private Limited</h3>
+        <p>Worked on real-time sensor integration and cloud dashboard using AWS IoT Core.</p>
+      </div>
+      <div class="project-card">
+        <h3>Intern @ IntelliKonnect Solutions (Tvilight B.V., The Netherlands)</h3>
+        <p>Contributed to ML and sensor fusion projects, and built smart security systems.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <p>Let's connect and discuss potential opportunities!</p>
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p>📬 Let’s connect for collaboration, freelancing or geeky convos!</p>
+      <a href="mailto:ypshah2003@gmail.com" class="button">Email Me</a>
+      <a href="https://www.linkedin.com/in/shah-yash-piyush-599639255/" class="button" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://yashinnovates.blogspot.com/" class="button" target="_blank" rel="noopener">Blog</a>
+    </div>
+  </section>
 
-            <div style="display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap; margin-top: 2rem;">
-                <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/shah-yash-piyush-599639255/" target="_blank" title="LinkedIn" style="display: flex; align-items: center;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 40px; height: 40px; margin-right: 10px;">
-                    <span>LinkedIn</span>
-                </a>
+  <footer>
+    <p>© 2025 Yash Shah's Portfolio. Built with ☕ and 💡. All rights reserved</p>
+  </footer>
 
-                <!-- Email -->
-                <a href="mailto:ypshah2003@gmail.com" title="Email" style="display: flex; align-items: center;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" style="width: 40px; height: 40px; margin-right: 10px;">
-                    <span>Email</span>
-                </a>
-            </div>
-            
-            <a href="#contact" class="button">Get In Touch</a>
-        </div>
-    </section>
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('nav-links');
+      nav.classList.toggle('active');
+    }
 
-    <footer>
-        <p>&copy; 2025 Yash Shah's Portfolio. All rights reserved.</p>
-    </footer>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+      document.getElementById('theme-icon').textContent = current === 'dark' ? '🌞' : '🌙';
+    }
 
-    <script>
-        const sections = document.querySelectorAll('section');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.2 });
+    function smoothScroll(event, target) {
+      event.preventDefault();
+      const element = document.querySelector(target);
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
 
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    </script>
+    // Default to dark theme
+    document.documentElement.setAttribute('data-theme', 'dark');
+  </script>
 </body>
 </html>
